@@ -84,3 +84,9 @@ endmodule
 生成波形如下
 
 ![wave](wave.jpg)
+
+学习中参考的两个链接
+
+[单周期](https://github.com/panxuc/xucpu.git)
+
+[多周期](https://github.com/xunqianxun/LongArch-liguoqi-CPU.git)
