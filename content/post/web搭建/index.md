@@ -35,7 +35,7 @@ ssh -T git@github.com git@github.com: Permission denied (publickey).
 
 首先注意git clone 的网址其实是在库code里的，不是直接clone的 
 
-![gitclone](gitclone.png)
+![gitclone](gitclone.jpg)
 
 git clone问题的三个解决办法
 
@@ -51,7 +51,7 @@ git@github.com:Danicayy/danicayy.github.io.git
 
 - 查找方法：控制面板-网络和internet-internet选项-连接-局域网设置
 
-![internet](internet.png)
+![internet](internet.jpg)
 
 ### 1.3 pull or push?
 
@@ -85,7 +85,7 @@ vscode上面配置git graph
 
 然后每次打开文件夹第三个tree 看好更改之后commit之后push就可以了，可以清晰的看到远程和本地库的更改分支
 
-![gitgraph](gitgraph.png)
+![gitgraph](gitgraph.jpg)
 
 好像就这些？
 
@@ -115,4 +115,10 @@ git init
 
 然后就这个可以对应界面是哪一段代码，里面就可以进行更改
 
-![web](web.png)
+![web](web.jpg)
+
+备注：
+
+- 调试了一大段发现是因为：这个网页只能识别jpg图片，之后注意就好了
+
+- hugo server正常生成但是github pages不行，主要是路径不对，参考：[解决方案]([静态网站生成器Hugo本地生成网站与public文件夹推送到Github上效果不一致的问题解决_hugo发布git只要public目录-CSDN博客](https://blog.csdn.net/qq_38250687/article/details/119455302))我的做法是更改库的名为自己github账户的名
