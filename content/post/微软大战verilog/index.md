@@ -1,12 +1,10 @@
 ---
 title: VScode&verilog
 description: VScode配置iverilog
-slug: github pages
 date: 2025-04-04 00:00:00+0000
-image: cover.jpg
+image: wave.jpg
 categories:
     - 硬件学习
-weight: 1       # You can add weight to some posts to override the default sorting (date descending)  
 ---
 
 # 微软大战verilog
