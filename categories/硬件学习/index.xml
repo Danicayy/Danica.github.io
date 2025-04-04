@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>硬件学习 on Danica_Blog</title><link>https://demo.stack.jimmycai.com/categories/%E7%A1%AC%E4%BB%B6%E5%AD%A6%E4%B9%A0/</link><description>Recent content in 硬件学习 on Danica_Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 04 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.stack.jimmycai.com/categories/%E7%A1%AC%E4%BB%B6%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml"/><item><title>VScode&amp;verilog</title><link>https://demo.stack.jimmycai.com/p/vscodeverilog/</link><pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate><guid>https://demo.stack.jimmycai.com/p/vscodeverilog/</guid><description>&lt;img src="https://demo.stack.jimmycai.com/p/vscodeverilog/wave.jpg" alt="Featured image of post VScode&amp;verilog" />&lt;h1 id="微软大战verilog">微软大战verilog
+&lt;/h1>&lt;p>在体系结构-CPU设计的课程中完成小组作业，然后开始了verilog的学习&lt;/p>
+&lt;p>起因是觉得vivado真的好丑代码看起来好丑好丑，整个配置虽然全面但是互不兼容，这很不好，然后先下载了Modelsim SE-64 10.4和Icarus Verilog，iverilog配置比较简单，因为Modelsim SE-64 10.4专业版需要💴，所以后面又看了很多教程破解，后面发现还是iverilog好用，但是还是记录一下。（Modelsim SE-64 10.4是因为仿真和vivado一样微全面，但是兼容性比较好）&lt;/p>
+&lt;h2 id="modelsim-se-64-104">Modelsim SE-64 10.4
+&lt;/h2>&lt;p>这个主要参考了&lt;a class="link" href="https://blog.csdn.net/github_33678609/article/details/53493673?locationNum=6&amp;amp;fps=1" target="_blank" rel="noopener"
+>教程&lt;/a>，按照这个教程基本没啥问题，但是就是加环境变量的时候加错了位置，所以一直打不开，其他的就还好。&lt;/p>
+&lt;h2 id="iverilog">iverilog
+&lt;/h2>&lt;p>主要参考了[教程](&lt;a class="link" href="https://blog.csdn.net/weixin_60094035/article/details/126532981" target="_blank" rel="noopener"
+>VScode配置verilog环境(代码补全，报错，波形仿真)_vscode verilog-CSDN博客&lt;/a>)&lt;/p>
+&lt;p>其实比较重要的就是FPGA那个logo的verilog-HDL以及WaveTrace(用来波形跟踪）还有一个testbench（自动生成testbench)这几个比较重要&lt;/p>
+&lt;p>其他的按照这就可以，就是testbench的时候要在这个文件中加信号的定义和先后顺序，自动生成的只有一个模板没有测评的具体东西，打开vcd里面是啥也没有的，所以这部分是要手动填写的，一下是一个对alu的测试testbench代码&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
+&lt;/span>&lt;span class="lnt">50
+&lt;/span>&lt;span class="lnt">51
+&lt;/span>&lt;span class="lnt">52
+&lt;/span>&lt;span class="lnt">53
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-verilog" data-lang="verilog">&lt;span class="line">&lt;span class="cl">&lt;span class="no">`include&lt;/span> &lt;span class="s">&amp;#34;ALU.v&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="no">`include&lt;/span> &lt;span class="s">&amp;#34;ALUOp.vh&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="no">`timescale&lt;/span> &lt;span class="mh">1&lt;/span>&lt;span class="n">ns&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mh">1&lt;/span>&lt;span class="n">ps&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">module&lt;/span> &lt;span class="n">tb_ALU&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">parameter&lt;/span> &lt;span class="n">PERIOD&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mh">10&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">reg&lt;/span> &lt;span class="n">clk&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mh">0&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">reg&lt;/span> &lt;span class="n">rst&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mh">1&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// 初始复位有效
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kt">reg&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mh">31&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="mh">0&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="n">busA&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mh">0&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">reg&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mh">31&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="mh">0&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="n">busB&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mh">0&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">reg&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mh">7&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="mh">0&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="n">aluOp&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mh">0&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">wire&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mh">31&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="mh">0&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="n">aluOut&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 生成时钟
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">always&lt;/span> &lt;span class="p">#(&lt;/span>&lt;span class="n">PERIOD&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="mh">2&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="n">clk&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="o">~&lt;/span>&lt;span class="n">clk&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 释放复位
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">initial&lt;/span> &lt;span class="k">begin&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">#(&lt;/span>&lt;span class="n">PERIOD&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="mh">2&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="n">rst&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mh">0&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// 20ns后释放复位
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">end&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 实例化ALU
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">ALU&lt;/span> &lt;span class="n">u_ALU&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="n">clk&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">clk&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="n">rst&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">rst&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="n">busA&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">busA&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="n">busB&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">busB&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="n">aluOp&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">aluOp&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="n">aluOut&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">aluOut&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 主测试逻辑
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">initial&lt;/span> &lt;span class="k">begin&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">$dumpfile&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;ALU.vcd&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">$dumpvars&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mh">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">tb_ALU&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="c1">// 记录所有层次信号
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 初始化输入(这里是手动添加的)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="mh">10&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// 等待复位生效
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">busA&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mh">32&amp;#39;h1&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">busB&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mh">32&amp;#39;h2&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">aluOp&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="no">`ALU_ADD&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 变更操作码测试不同功能
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="mh">100&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">aluOp&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="no">`ALU_SUB&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">busA&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mh">32&amp;#39;h5&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">busB&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mh">32&amp;#39;h3&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 结束仿真
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="p">#&lt;/span>&lt;span class="mh">200&lt;/span> &lt;span class="nb">$finish&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">end&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">endmodule&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>生成波形如下&lt;/p>
+&lt;p>&lt;img src="https://demo.stack.jimmycai.com/p/vscodeverilog/wave.jpg"
+width="2279"
+height="915"
+srcset="https://demo.stack.jimmycai.com/p/vscodeverilog/wave_hu_3d3ab70ced170096.jpg 480w, https://demo.stack.jimmycai.com/p/vscodeverilog/wave_hu_8e057d7246113ffb.jpg 1024w"
+loading="lazy"
+alt="wave"
+class="gallery-image"
+data-flex-grow="249"
+data-flex-basis="597px"
+>&lt;/p>
+&lt;p>学习中参考的两个链接&lt;/p>
+&lt;p>&lt;a class="link" href="https://github.com/panxuc/xucpu.git" target="_blank" rel="noopener"
+>单周期&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://github.com/xunqianxun/LongArch-liguoqi-CPU.git" target="_blank" rel="noopener"
+>多周期&lt;/a>&lt;/p></description></item></channel></rss>

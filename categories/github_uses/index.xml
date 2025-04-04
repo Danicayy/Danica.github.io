@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Github_uses on Danica_Blog</title><link>https://demo.stack.jimmycai.com/categories/github_uses/</link><description>Recent content in Github_uses on Danica_Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 04 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.stack.jimmycai.com/categories/github_uses/index.xml" rel="self" type="application/rss+xml"/><item><title>将hugo模板布置到github上做自己的blog记录</title><link>https://demo.stack.jimmycai.com/p/github-pages/</link><pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate><guid>https://demo.stack.jimmycai.com/p/github-pages/</guid><description>&lt;img src="https://demo.stack.jimmycai.com/p/github-pages/cover.jpg" alt="Featured image of post 将hugo模板布置到github上做自己的blog记录" />&lt;h1 id="部署自己的github-pages">部署自己的github pages
+&lt;/h1>&lt;h2 id="1关于github和git的使用">1.关于github和git的使用
+&lt;/h2>&lt;h3 id="11-ssh">1.1 ssh
+&lt;/h3>&lt;p>这个地方问题比较大，因为之前用户名设置成中文，所以连接ssh的时候一直报错找不到文件夹&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ssh -T git@github.com git@github.com: Permission denied &lt;span class="o">(&lt;/span>publickey&lt;span class="o">)&lt;/span>.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>然后要先更改用户名，其实有教程&lt;a class="link" href="https://blog.csdn.net/highlighters/article/details/125133965" target="_blank" rel="noopener"
+>更改用户名&lt;/a>&lt;/p>
+&lt;p>，不过因为自己比较懒，（确实课比较多）然后就远程工程师了，但是具体教程和这个差不多，但是远程是装了一个mini系统，代替这个教程里的另一个账户，以防账户出问题&lt;/p>
+&lt;p>配置ssh具体教程如下&lt;/p>
+&lt;p>&lt;a class="link" href="https://blog.csdn.net/weixin_42310154/article/details/118340458" target="_blank" rel="noopener"
+>ssh&lt;/a>&lt;/p>
+&lt;p>现在文件夹下应该两种密钥都有了，下次直接cat开始就可以了。&lt;/p>
+&lt;h3 id="12处理git-clone的网络连接问题">1.2处理git clone的网络连接问题
+&lt;/h3>&lt;p>首先注意git clone 的网址其实是在库code里的，不是直接clone的&lt;/p>
+&lt;p>&lt;img src="https://demo.stack.jimmycai.com/p/github-pages/gitclone.jpg"
+width="2817"
+height="1411"
+srcset="https://demo.stack.jimmycai.com/p/github-pages/gitclone_hu_f46364c80819c932.jpg 480w, https://demo.stack.jimmycai.com/p/github-pages/gitclone_hu_66c42f8eb3937e70.jpg 1024w"
+loading="lazy"
+alt="gitclone"
+class="gallery-image"
+data-flex-grow="199"
+data-flex-basis="479px"
+>&lt;/p>
+&lt;p>git clone问题的三个解决办法&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>首先就是梯子tune模式（全局模式，正常的梯子在终端是不适用的，所以开tone偶模式）&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>第二个使用ssh克隆&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git@github.com:Danicayy/danicayy.github.io.git
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>后面还是不行，就直接终端代理了，因为用的是git bash所以就直接和linux一样的配置&lt;a class="link" href="https://weilining.github.io/294.html" target="_blank" rel="noopener"
+>终端配置&lt;/a>其中的代理端口要自己找&lt;/p>
+&lt;ul>
+&lt;li>查找方法：控制面板-网络和internet-internet选项-连接-局域网设置&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://demo.stack.jimmycai.com/p/github-pages/internet.jpg"
+width="893"
+height="790"
+srcset="https://demo.stack.jimmycai.com/p/github-pages/internet_hu_da407336d8cfdaa2.jpg 480w, https://demo.stack.jimmycai.com/p/github-pages/internet_hu_dafb6bfc5634b2fb.jpg 1024w"
+loading="lazy"
+alt="internet"
+class="gallery-image"
+data-flex-grow="113"
+data-flex-basis="271px"
+>&lt;/p>
+&lt;h3 id="13-pull-or-push">1.3 pull or push?
+&lt;/h3>&lt;p>pull的意思是把库里面的东西拉到本地，push的意思是把我的东西推到库里面&lt;/p>
+&lt;p>git是本地，github是远程，远程和本地都可以对仓库进行修改，如果在远程修改过，那么相当于远程仓库更进一步，所以在本地要进行&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git pull
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>否则会报错本地和远程库不同同步&lt;/p>
+&lt;p>本地更改之后就是三件套&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git add . //这个意思是把所有文件加到push的阵列里面
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git commit -m &lt;span class="s2">&amp;#34;message&amp;#34;&lt;/span> //委托一下，同时为了辨别一下加一句message
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git push //直接推进去
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>workflow有一个这样的文件夹，只有触发workflow的命令的时候才会有这个message&lt;/p>
+&lt;p>大概是这样？记不太清整个过程了，后面再碰见再努力吧&lt;/p>
+&lt;h3 id="14-git-pushvscode">1.4 git push&amp;amp;VScode
+&lt;/h3>&lt;blockquote>
+&lt;p>微软大战code和github&lt;/p>&lt;/blockquote>
+&lt;p>vscode上面配置git graph&lt;/p>
+&lt;p>然后每次打开文件夹第三个tree 看好更改之后commit之后push就可以了，可以清晰的看到远程和本地库的更改分支&lt;/p>
+&lt;p>&lt;img src="https://demo.stack.jimmycai.com/p/github-pages/gitgraph.jpg"
+width="2854"
+height="1583"
+srcset="https://demo.stack.jimmycai.com/p/github-pages/gitgraph_hu_4d0694ab1a4a07de.jpg 480w, https://demo.stack.jimmycai.com/p/github-pages/gitgraph_hu_3a664aab7e919e4d.jpg 1024w"
+loading="lazy"
+alt="gitgraph"
+class="gallery-image"
+data-flex-grow="180"
+data-flex-basis="432px"
+>&lt;/p>
+&lt;p>好像就这些？&lt;/p>
+&lt;h2 id="2网页的设置">2.网页的设置
+&lt;/h2>&lt;h3 id="21-hugo模板的使用">2.1 hugo模板的使用
+&lt;/h3>&lt;p>首先是hugo要配置整个go语言&lt;/p>
+&lt;p>整个参考了这个&lt;a class="link" href="https://www.cnblogs.com/liumylay/articles/17936667.html" target="_blank" rel="noopener"
+>博客&lt;/a>,然后&lt;a class="link" href="https://hugo.opendocs.io/" target="_blank" rel="noopener"
+>官网&lt;/a>其实也有教程，注意自己找的主题模板，比如我现在用的starter本身就是一个完整的库，不要自己再创建一个库然后&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git init
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>会报&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">.githubmodule 内容缺失的错
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>就是因为在库里面嵌套了一个库&lt;/p>
+&lt;h3 id="22网页的开发者模式">2.2网页的开发者模式
+&lt;/h3>&lt;p>正常应该是F12进开发者模式，但是很明显，小新没有这个，但是之前误打误撞发现是 ctr+shift+c（就是忘了这个是windows，当成是linux的终端发现的）&lt;/p>
+&lt;p>然后就这个可以对应界面是哪一段代码，里面就可以进行更改&lt;/p>
+&lt;p>&lt;img src="https://demo.stack.jimmycai.com/p/github-pages/web.jpg"
+width="2859"
+height="1701"
+srcset="https://demo.stack.jimmycai.com/p/github-pages/web_hu_44d7205c8826cb5f.jpg 480w, https://demo.stack.jimmycai.com/p/github-pages/web_hu_45fd2ee6a61fea10.jpg 1024w"
+loading="lazy"
+alt="web"
+class="gallery-image"
+data-flex-grow="168"
+data-flex-basis="403px"
+>&lt;/p>
+&lt;p>备注：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>调试了一大段发现是因为：这个网页只能识别jpg图片，之后注意就好了&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>hugo server正常生成但是github pages不行，主要是路径不对，参考：&lt;a class="link" href="[%e9%9d%99%e6%80%81%e7%bd%91%e7%ab%99%e7%94%9f%e6%88%90%e5%99%a8Hugo%e6%9c%ac%e5%9c%b0%e7%94%9f%e6%88%90%e7%bd%91%e7%ab%99%e4%b8%8epublic%e6%96%87%e4%bb%b6%e5%a4%b9%e6%8e%a8%e9%80%81%e5%88%b0Github%e4%b8%8a%e6%95%88%e6%9e%9c%e4%b8%8d%e4%b8%80%e8%87%b4%e7%9a%84%e9%97%ae%e9%a2%98%e8%a7%a3%e5%86%b3_hugo%e5%8f%91%e5%b8%83git%e5%8f%aa%e8%a6%81public%e7%9b%ae%e5%bd%95-CSDN%e5%8d%9a%e5%ae%a2]%28https://blog.csdn.net/qq_38250687/article/details/119455302%29" >解决方案&lt;/a>我的做法是更改库的名为自己github账户的名&lt;/p>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>
