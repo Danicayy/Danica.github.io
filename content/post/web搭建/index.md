@@ -35,7 +35,7 @@ ssh -T git@github.com git@github.com: Permission denied (publickey).
 
 首先注意git clone 的网址其实是在库code里的，不是直接clone的 
 
-![gitclone](web搭建\gitclone.png)
+![gitclone](web搭建/gitclone.png)
 
 git clone问题的三个解决办法
 
@@ -51,7 +51,7 @@ git@github.com:Danicayy/danicayy.github.io.git
 
 - 查找方法：控制面板-网络和internet-internet选项-连接-局域网设置
 
-![internet](web搭建\internet.png)
+![internet](web搭建/internet.png)
 
 ### 1.3 pull or push?
 
@@ -85,7 +85,7 @@ vscode上面配置git graph
 
 然后每次打开文件夹第三个tree 看好更改之后commit之后push就可以了，可以清晰的看到远程和本地库的更改分支
 
-![gitgraph](web搭建\gitgraph.png)
+![gitgraph](web搭建/gitgraph.png)
 
 好像就这些？
 
@@ -115,4 +115,4 @@ git init
 
 然后就这个可以对应界面是哪一段代码，里面就可以进行更改
 
-![web](web搭建\web.png)
+![web](web搭建/web.png)
